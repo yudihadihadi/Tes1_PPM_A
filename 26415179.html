@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel=stylesheet href=jmobile/jquery.mobile-1.4.5.css />
+	<script src=jmobile/jquery.js></script>
+	<script src=jmobile/jquery.mobile-1.4.5.js></script>
+	<script src="jscolor.js"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div data-role=page id=win1>
+<div data-role="panel" id="mypanel" data-position="right" data-display="push">
+<h3>My Panel</h3>
+    <p>
+    This is my panel content.
+    </p>
+    <p>
+    <a data-rel="close" data-role="button">Hide</a>
+    </p>
+</div><!-- /panel -->
+		<div data-role=header>
+			<h1>Window 1</h1>
+		</div>
+		<div data-role=content>
+			<!--<a href=#win2 data-transition=slide data-direction=reverse>CLICK</a>-->
+        <label for="pages" class="select">Navigate to page:</label>
+        <select name="pages" id="selectPages" class="navigateToPage">
+           <option value="win1">Factorial</option>
+           <option value="win2">Color</option>
+           <option value="win3">Rangkuman</option>
+
+        </select>
+		
+        <br />  
+    
+			<!--<div class="ui-field-contain">
+				<label for="select-custom-1">Basic:</label>
+				<select name="select-custom-1" id="select-custom-1" data-native-menu="false">
+				<option value="1">The 1st Option</option>
+				<option value="2">The 2nd Option</option>
+				<option value="3">The 3rd Option</option>
+				</select>
+			</div>-->
+
+			Untuk Faktorial dan Angka<input type="text" name="factorial" id="factorial" />
+			Untuk Pangkat<input type="text" name="pangkat" id="pangkat" />
+			<button type="button" name="button" onclick="GetFactorial(); myFunction();">
+			Calculate Factorial
+			</button>
+			<button type="button" name="button" onclick="GetHasil();">
+			Pangkat
+			</button>
+			<br/>
+  
+ <div id="showresulthere"></div> 
+ <button class="show-page-loading-msg" data-theme="b" data-textonly="false" data-textvisible="true" data-msgtext="Loading" data-inline="true">Loader</button>
+ <a href="#mypanel" data-role="button">Panel</a>
+		</div>
+		<div data-role=footer data-position=fixed>
+			<h1>Footer</h1>
+		</div>
+	</div>
+	<div data-role=page id=win2>
+		<div data-role=header data-add-back-btn=true>
+			<h1>Window Title</h1>
+		</div>
+		<div data-role=content>
+			<!--<a href=#win3>Ups</a>-->
+			<label for="pages" class="select">Navigate to page:</label>
+        <select name="pages" id="selectPages" class="navigateToPage">
+           <option value="win1">Factorial</option>
+           <option value="win2">Color</option>
+           <option value="win3">Rangkuman</option>
+		   </select>
+			<button class="jscolor {valueElement:'chosen-value', onFineChange:'setTextColor(this)'}">
+		Pick text color
+		<input type="type" class="jscolor {valueElement:'chosen-value', onFineChange:'setTextColor(this)'}">
+	</button>
+
+	HEX value: <input id="chosen-value" value="000000">
+			<table data-role="table" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Columns to display..." data-column-popup-theme="a">
+         <thead>
+           <tr class="ui-bar-d">
+             <th data-priority="2">Rank</th>
+             <th>Movie Title</th>
+             <th data-priority="3">Year</th>
+             <th data-priority="1"><abbr title="Rotten Tomato Rating">Rating</abbr></th>
+             <th data-priority="5">Reviews</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <th>1</th>
+             <td><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">Citizen Kane</a></td>
+             <td>1941</td>
+             <td>100%</td>
+             <td>74</td>
+           </tr>
+           <tr>
+             <th>2</th>
+             <td><a href="http://en.wikipedia.org/wiki/Casablanca_(film)" data-rel="external">Casablanca</a></td>
+             <td>1942</td>
+             <td>97%</td>
+             <td>64</td>
+           </tr>
+           <tr>
+             <th>3</th>
+             <td><a href="http://en.wikipedia.org/wiki/The_Godfather" data-rel="external">The Godfather</a></td>
+             <td>1972</td>
+             <td>97%</td>
+             <td>87</td>
+           </tr>
+           <tr>
+             <th>4</th>
+             <td><a href="http://en.wikipedia.org/wiki/Gone_with_the_Wind_(film)" data-rel="external">Gone with the Wind</a></td>
+             <td>1939</td>
+             <td>96%</td>
+             <td>87</td>
+           </tr>
+           <tr>
+             <th>5</th>
+             <td><a href="http://en.wikipedia.org/wiki/Lawrence_of_Arabia_(film)" data-rel="external">Lawrence of Arabia</a></td>
+             <td>1962</td>
+             <td>94%</td>
+             <td>87</td>
+           </tr>
+           <tr>
+             <th>6</th>
+             <td><a href="http://en.wikipedia.org/wiki/Dr._Strangelove" data-rel="external">Dr. Strangelove Or How I Learned to Stop Worrying and Love the Bomb</a></td>
+             <td>1964</td>
+             <td>92%</td>
+             <td>74</td>
+           </tr>
+           <tr>
+             <th>7</th>
+             <td><a href="http://en.wikipedia.org/wiki/The_Graduate" data-rel="external">The Graduate</a></td>
+             <td>1967</td>
+             <td>91%</td>
+             <td>122</td>
+           </tr>
+           <tr>
+             <th>8</th>
+             <td><a href="http://en.wikipedia.org/wiki/The_Wizard_of_Oz_(1939_film)" data-rel="external">The Wizard of Oz</a></td>
+             <td>1939</td>
+             <td>90%</td>
+             <td>72</td>
+           </tr>
+           <tr>
+             <th>9</th>
+             <td><a href="http://en.wikipedia.org/wiki/Singin%27_in_the_Rain" data-rel="external">Singin' in the Rain</a></td>
+             <td>1952</td>
+             <td>89%</td>
+             <td>85</td>
+           </tr>
+           <tr>
+             <th>10</th>
+             <td class="title"><a href="http://en.wikipedia.org/wiki/Inception" data-rel="external">Inception</a></td>
+             <td>2010</td>
+             <td>84%</td>
+             <td>78</td>
+           </tr>
+         </tbody>
+       </table>
+		</div>
+		<div data-role=footer data-position=fixed>
+			<h1>Footer</h1>
+		</div>
+	</div>
+	<div data-role=page id=win3>
+		<div data-role=header data-add-back-btn=true>
+			<h1>RANGKUMAN</h1>
+		</div>
+		<div data-role=content>
+		<label for="pages" class="select">Navigate to page:</label>
+        <select name="pages" id="selectPages" class="navigateToPage">
+           <option value="win1">Factorial</option>
+           <option value="win2">Color</option>
+           <option value="win3">Rangkuman</option>
+		   </select>
+     	<a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto" src="https://upload.wikimedia.org/wikipedia/id/thumb/6/68/Logo_petra_lowres.jpg/220px-Logo_petra_lowres.jpg" alt="Paris, France" style="width:10%"></a>
+		<div data-role="popup" id="popupParis" data-overlay-theme="b" data-theme="b" data-corners="false">
+    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img class="popphoto" src="https://upload.wikimedia.org/wikipedia/id/thumb/6/68/Logo_petra_lowres.jpg/220px-Logo_petra_lowres.jpg" style="max-height:512px;" alt="Paris, France">
+	</div>
+	<div class="ui-grid-b my-breakpoint">
+	<div class="ui-block-a">Jadi selama kurang lebih 1 bulan kita belajar mengenai penggunaan GitHub, dari webnya maupun aplikasi dekstop nya.</div>
+	<div class="ui-block-b">Lalu kita mempelajari jquery mobile yaitu yang sekarang ini saya kerjakan.</div>
+	<div class="ui-block-c">Kita mempelajari penggunaan tools-tools yang disediakan oleh jquery mobile tersebut dimana terdapat swipe(yang ada dibawah ini), slider, panel, pop-up(yang ada pada lambang Petra diatas ini), dan lain lain yang cukup mudah untuk digunakan karena terdapat demos nya.
+	Dan juga baru-baru ini kita mempelajari main controller dan yang lainnya</div>
+</div><!-- /grid-b -->
+	<br>
+	</div>
+  <div data-role="tabs" id="swipe">
+	    <div data-role="header" data-add-back-btn="true">
+	        <h1><a href="#profile" style="color:black">Swipe</a></h1>
+	    </div>
+
+	    <div data-role="content" class="ui-content">
+	        <ul id="list" class="touch" data-role="listview" data-icon="false" data-split-icon="delete">
+	            <li>
+	                <a href="#swipes">
+	                    <h3>Swipe this</h3>
+	                    <p>For Swiping 1.</p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#swipes">
+	                    <h3>Swipe this</h3>
+	                    <p>For Swiping 2.</p>
+	                </a>
+	            </li>
+	        </ul>
+			
+	    </div>
+
+	    <div id="confirm" class="ui-content" data-role="popup">
+	        <p id="question">You have successfully swipe me</p>
+	        <div class="ui-grid">
+	            <div class="ui-block">
+	                <a id="yes" class="ui-btn ui-corner-all ui-mini ui-btn-a" data-rel="back">Thanks</a>
+	            </div>
+	        </div>
+	    </div>
+</div>
+<div data-role=footer data-position=fixed>
+			<h1>Footer</h1>
+		</div>
+</div>
+</body>
+
+<script>
+	$( document ).on( "tabscreate", "#swipe", function() {
+		$( document ).on( "swipeleft swiperight", "#list li", function( event ) {
+			var listitem = $( this ),
+            dir = event.type === "swipeleft" ? "left" : "right",
+            transition = $.support.cssTransform3d ? dir : false;
+            confirmAndDelete( listitem, transition );
+		});
+		function confirmAndDelete( listitem, transition ) {
+			listitem.children( ".ui-btn" ).addClass( "ui-btn-active" );
+			$( "#confirm" ).popup( "open" );
+		}
+	});
+
+ 
+     // function definition
+
+ function GetFactorial()
+   {
+  var value = $("#factorial").val();
+     tempvalue = 1;
+     for ( i=value ; i>0 ;  i-- )
+      {
+         tempvalue = tempvalue * i ;
+      }
+  $("#showresulthere").html("Factorial of "+value+" is :"+tempvalue); 
+   }
+   
+   function GetHasil()
+   {
+  var value = $("#factorial").val();
+  var value2 = $("#pangkat").val();
+     tempvalue = 1;
+     for ( i=0 ; i<value2 ;  i++ )
+      {
+         tempvalue = tempvalue * value ;
+      }
+  $("#showresulthere").html("Hasil Pangkat :"+tempvalue); 
+   }
+  
+    // function definition
+   
+   function setTextColor(picker) {
+		document.getElementsByTagName('body')[0].style.color = '#' + picker.toString()
+	}
+   
+   $( document ).on( "click", ".show-page-loading-msg", function() {
+    var $this = $( this ),
+        theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+        msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+        textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+        textonly = !!$this.jqmData( "textonly" );
+        html = $this.jqmData( "html" ) || "";
+    $.mobile.loading( "show", {
+            text: msgText,
+            textVisible: textVisible,
+            theme: theme,
+            textonly: textonly,
+            html: html
+    });
+})
+.on( "click", ".hide-page-loading-msg", function() {
+    $.mobile.loading( "hide" );
+});
+
+$('.navigateToPage').change(function() {
+    var page = $(this).val();
+    $.mobile.changePage( "#"+page, { transition: "slideup"} );
+});
+
+/*try {
+    alert("NUMBER PLEASE");
+}
+catch(err) {
+    document.getElementById("factorial").innerHTML = err.message;
+}*/
+
+function myFunction() {
+    var message, x;
+    message = document.getElementById("message");
+    message.innerHTML = "";
+    x = document.getElementById("factorial").value;
+    try { 
+        if(x == "") throw "is empty";
+        if(isNaN(x)) throw "is not a number";
+        x = Number(x);
+    }
+    catch(err) {
+        message.innerHTML = "Error: " + err + ".";
+    }
+    finally {
+        document.getElementById("factorial").value = "";
+    }
+}
+</script>
+</html>
